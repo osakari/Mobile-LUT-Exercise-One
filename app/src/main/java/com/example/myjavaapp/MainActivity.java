@@ -22,15 +22,17 @@ public class MainActivity extends AppCompatActivity {
             TextView resultTextView = findViewById(R.id.resultTextView);
 
             try {
-                int number1 = Integer.parseInt(firstNumEditText.getText().toString());
-                int number2 = Integer.parseInt(secondNumEditText.getText().toString());
-                int sum = number1 + number2;
-                String result = Integer.toString(sum);
+                long number1 = Long.parseLong(firstNumEditText.getText().toString());
+                long number2 = Long.parseLong(secondNumEditText.getText().toString());
+                long sum = number1 + number2;
+                String result = Long.toString(sum);
 
                 resultTextView.setText(result);
             } catch (Exception exception) {
+                String txt = "";
+
                 // Do nothing... just clear the text view.
-                resultTextView.setText("");
+                resultTextView.setText(txt);
             }
         });
     }
